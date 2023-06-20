@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "../loaders/gltfLoadering";
 import * as SkeletonUtils from "../externalJSFiles/skeletoning";
@@ -8,11 +8,35 @@ import theSVG from "../svgs/thunderbolting.svg"
 import "./scene.css"
 import img from "../images/cringey.jpg"
 
+const Timer = () => {
+
+  const [timer, setTimer] = useState(17);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer(prevTimer => prevTimer - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    // Update the Three.js timer text
+    const timerText = document.getElementById('timerText');
+    if (timerText) {
+      timerText.innerText = `TAKE OFF IN: ${timer > 0 ? timer : 0} seconds`;
+    }
+  }, [timer]);
+  return (
+    <h1 id="timerText" style={{ position: 'absolute', color: 'white',top:'50vh' }}>{timer} </h1>
+  )
+}
 
 
 const SceneA = () => {
 
   const [loader, setloader] = useState(true)
+
+
 
 
   useEffect(() => {
@@ -93,7 +117,7 @@ const SceneA = () => {
       // scene.add(modal);
       grouping.add(modal)
       grouping.add(lathe)
-      console.log(modal);
+      // console.log(modal);
       animate();
     });
 
@@ -154,8 +178,12 @@ const SceneA = () => {
 
         grouping.add(thunderBolt)
 
+
       }
     )
+
+
+
 
     const clock = new THREE.Clock()
 
@@ -164,10 +192,14 @@ const SceneA = () => {
     setloader(false)
     let speeding = 0.01;
     let groupSpeeding = 0.0001;
+    let takeOffTiming = 15;
 
     function animate() {
       requestAnimationFrame(animate)
       renderer.render(scene, camera)
+
+      // startTimer();
+
 
 
       if (modal.position.z > 0) {
@@ -186,7 +218,7 @@ const SceneA = () => {
             groupSpeeding += 0.001;
           grouping.position.y += groupSpeeding
         }
-        console.log(timing);
+        // console.log(timing);
       }
 
     }
@@ -209,7 +241,7 @@ const SceneA = () => {
       </div>
         :
         <>
-          <svg viewBox='0 0 400 400' style={{ position: 'absolute', zIndex: 300, height: '90vh', width: '400px', right: '0', top: '50' }}>
+          <svg viewBox='0 0 400 400' style={{ position: 'absolute', zIndex: 300, height: '95vh', width: '400px', right: '0', top: '10' }}>
             {/* <line x1="100" y1="0" x2="100" y2="500" stroke='white' />
             <line x1="200" y1="0" x2="200" y2="500" stroke='white' />
             <line x1="300" y1="0" x2="300" y2="500" stroke='white' />
@@ -229,7 +261,8 @@ const SceneA = () => {
             {/* <path d="M75,200 30,100" stroke='white' /> */}
           </svg>
           <canvas id="webgl" className="webgl"></canvas>
-          <p style={{ position: 'absolute', color: 'white',fontSize:'20px' }}>ITS FUNNY AINT IT 😆</p>
+          <p style={{ position: 'absolute', color: 'white', fontSize: '20px' }}>ITS FUNNY AINT IT 😆</p>
+          <Timer />
         </>
       }
     </>
