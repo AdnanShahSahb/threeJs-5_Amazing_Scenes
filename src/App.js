@@ -13,6 +13,7 @@ function App() {
   const [scene, setScene] = useState(1);
   return (
     <div className="App">
+      
       <div style={{ position: 'absolute', color: 'white', right: '0', bottom: '0', zIndex: 100 }}>
         <button onClick={() => { setScene(1) }} style={{ backgroundColor: `${scene == 1 ? 'gray' : 'white'} `, color: `${scene != 1 ? 'gray' : 'white'}`, height: '40px', width: '120px' }}>Funny Rocket</button>
         <button onClick={() => { setScene(2) }} style={{ backgroundColor: `${scene == 2 ? 'gray' : 'white'} `, color: `${scene != 2 ? 'gray' : 'white'}`, height: '40px', width: '120px' }}>Square Motion</button>

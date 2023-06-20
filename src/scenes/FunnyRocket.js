@@ -209,8 +209,27 @@ const SceneA = () => {
       </div>
         :
         <>
+          <svg viewBox='0 0 400 400' style={{ position: 'absolute', zIndex: 300, height: '90vh', width: '400px', right: '0', top: '50' }}>
+            {/* <line x1="100" y1="0" x2="100" y2="500" stroke='white' />
+            <line x1="200" y1="0" x2="200" y2="500" stroke='white' />
+            <line x1="300" y1="0" x2="300" y2="500" stroke='white' />
+            <line x1="400" y1="0" x2="400" y2="500" stroke='white' />
+
+            <line x1="0" y1="100" x2="400" y2="100" stroke='white' />
+            <line x1="0" y1="200" x2="400" y2="200" stroke='white' />
+            <line x1="0" y1="300" x2="400" y2="300" stroke='white' />
+            <line x1="0" y1="400" x2="400" y2="400" stroke='white' />
+            <line x1="0" y1="500" x2="400" y2="500" stroke='white' /> */}
+            <text x="330" y="-40" textAnchor="middle" fill="brown" fontSize="64" fontWeight="bolder">Btns</text>
+
+            <path d="M300,0 C200,100 100,300 100,400 z" fill='brown' />
+            <path d="M50,350 C 75,400 85,410 75,450 " stroke='brown' fill="brown" />
+            <path d="M75,450 C100,425 110,435 150,430 " stroke='brown' fill="brown" />
+            {/* C100,425 110,435 75,450 150,450  */}
+            {/* <path d="M75,200 30,100" stroke='white' /> */}
+          </svg>
           <canvas id="webgl" className="webgl"></canvas>
-          <p style={{ position: 'absolute', color: 'white' }}>ITS FUNNY AINT IT 😆</p>
+          <p style={{ position: 'absolute', color: 'white',fontSize:'20px' }}>ITS FUNNY AINT IT 😆</p>
         </>
       }
     </>
