@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/threeJs-5_Amazing_Scenes/static/css/main.7636c606.css",
+    "main.js": "/threeJs-5_Amazing_Scenes/static/js/main.9d4febc4.js",
+    "static/media/Soldier.glb": "/threeJs-5_Amazing_Scenes/static/media/Soldier.f4f71ae8abedd78e209b.glb",
+    "static/media/cringey.jpg": "/threeJs-5_Amazing_Scenes/static/media/cringey.6666b04757e180e76748.jpg",
+    "static/media/thunderbolting.svg": "/threeJs-5_Amazing_Scenes/static/media/thunderbolting.d28dbe17f1a35b479b9297a2d1fde329.svg",
+    "index.html": "/threeJs-5_Amazing_Scenes/index.html",
+    "main.7636c606.css.map": "/threeJs-5_Amazing_Scenes/static/css/main.7636c606.css.map",
+    "main.9d4febc4.js.map": "/threeJs-5_Amazing_Scenes/static/js/main.9d4febc4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7636c606.css",
+    "static/js/main.9d4febc4.js"
+  ]
+}
